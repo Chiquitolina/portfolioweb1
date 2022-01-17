@@ -1,0 +1,85 @@
+.mat-card {
+    border-radius: 32px;
+    padding: 0px;
+    padding-bottom: 10%;
+    border-color:saddlebrown;
+    border-style: outset;
+}
+
+
+.social-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    z-index: 100;
+}
+
+.icon {
+    display: flex;
+    padding: .2rem;
+    padding-right: 0;
+    transition: all .5s;
+}
+
+.icon:hover {
+    padding-right: .4rem;
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.42);
+}
+
+.icon:first-child {
+border-radius: 1rem 0 0 0;
+}
+
+.icon:last-child {
+border-radius: 0 0 0 1rem;
+}
+
+#logoap {
+    position: absolute;
+    display: flex; 
+    z-index: 8; 
+    border-radius: 32px 0 0 0; 
+    color: red
+}
+
+#banner {
+    border-radius: 32px 32px 0 0; 
+}
+
+.perfil {
+    z-index: 3; 
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.42);
+    border-radius: 32px 32px 32px 32px; 
+}
+
+#imagenperfil {
+    border-radius: 50%;
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.42);
+}
+
+.circuloporcentaje {
+    width: 150px;
+    height: 150px;
+    background: black;
+    margin:0px auto;
+    text-align: center;
+    border: 8px solid;
+    border-radius: 50%;
+}
+
+.asd {
+    height: 150px; 
+    width: 150px; 
+    border-radius: 50%; 
+    background: red;
+    margin-left: 8%;
+}
+
+.clase {
+    opacity:0.80;
+}
+
+.clase:hover {
+    opacity:1;
+}

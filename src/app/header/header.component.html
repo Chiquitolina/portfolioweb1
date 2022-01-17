@@ -1,0 +1,145 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-9"></div>
+      <div class="col">
+        <div class="social-bar">
+          <a href="https://www.facebook.com/aigggg" target="_blank"
+            ><img src="/assets/img/facebook.svg" class="icon" width="50"
+          /></a>
+          <a href="https://github.com/Chiquitolina" target="_blank"
+            ><img src="/assets/img/github.svg" class="icon" width="50"
+          /></a>
+          <a
+            href="https://www.linkedin.com/in/alejandro-ignacio-godino-51aaaa218/"
+            target="_blank"
+            ><img src="/assets/img/linkedin.svg" class="icon" width="50"
+          /></a>
+          <img src="/assets/img/mail.svg" class="icon" width="50" />
+        </div>
+      </div>
+      <div class="col" style="margin-top: 0.6%">
+        <button
+          type="button"
+          class="btn btn-dark"
+          style="position: absolute; z-index: 3"
+        >
+          Login
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <img
+          id="banner"
+          src="/assets/img/bannerfinal.svg"
+          alt="image"
+          width="100%"
+        />
+      </div>
+    </div>
+  
+    <div class="container">
+      <div class="row" style="margin-top: -12%">
+        <div
+          class="col-lg-2 perfil"
+          style="display: inline-flex; justify-content: center"
+        >
+          <div>
+            <img src="/assets/img/fotocarnet.jpg" id="imagenperfil" width="180" />
+          </div>
+        </div>
+        <div
+          class="col-12 col-md-12 col-sm-12 col-lg perfil"
+          style="border-color: black"
+        >
+          <hr style="color: transparent; margin-top: 8%" />
+          <h1 style="color: black">{{ nombre }}</h1>
+          <hr style="color: transparent" />
+          <div
+            *ngIf="mostrarformularioperfil"
+            class="input-group mb-3"
+            style="margin-top: 2%"
+          >
+            <input
+              type="text"
+              (input)="cambiosPerfil($event)"
+              class="form-control"
+              placeholder="Nombre completo"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <h5 style="color: black">
+            Estudiante de Licenciatura en Ciencias de la Computación en la
+            Facultad de Ciencias Exactas, Ingeniería y Agrimensura de la
+            Universidad Nacional de Rosario.
+          </h5>
+          <div
+            *ngIf="mostrarformularioperfil"
+            class="input-group mb-3"
+            style="margin-top: 2%"
+          >
+            <input
+              type="text"
+              (input)="cambiosPerfil($event)"
+              class="form-control"
+              placeholder="Breve descripcion"
+              aria-label="Descripcion"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <h5 style="color: black">Full Stack Web Developer Jr.</h5>
+          <div
+            *ngIf="mostrarformularioperfil"
+            class="input-group mb-3"
+            style="margin-top: 2%"
+          >
+            <input
+              type="text"
+              (input)="cambiosPerfil($event)"
+              class="form-control"
+              placeholder="Titulo"
+              aria-label="Titulo"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div style="display: inline-flex;">
+          <div>
+            <h6 style="color: black">{{ locacion }}</h6>
+          </div>
+          <div>
+            <button
+              *ngIf="!mostrarformularioperfil"
+              type="button"
+              class="btn btn-secondary btn-sm"
+              style="height: 1; margin-bottom: 1.5%; margin-left: 20%;"
+              (click)="mostrarformularioPerfil()"
+            >
+              Edit
+            </button>
+          </div>
+        </div>
+          <div *ngIf="mostrarformularioperfil" class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Ciudad, provincia, pais"
+              (input)="cambiosPerfilLocacion($event)"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <button
+          *ngIf="mostrarformularioperfil"
+          type="button"
+          class="btn btn-secondary btn-sm"
+          style="height: 1; margin-bottom: 1.5%"
+          (click)="guardarCambiosPerfil()"
+        >
+          Save
+        </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
