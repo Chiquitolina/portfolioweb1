@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SkillsComponent } from './skills/skills.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { EducacionComponent } from './educacion/educacion.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SkillsComponent
+    SkillsComponent,
+    EducacionComponent
   ],
   imports: [
     BrowserModule,
@@ -22,12 +24,12 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
       "radius": 60,
       "maxPercent": 200,
       "units": " %",
-      "unitsColor": "#483500",
+      "unitsColor": "#000000",
       "outerStrokeWidth": 5,
       "outerStrokeColor": "#FFFFFF",
       "innerStrokeColor": "#FFFFFF",
-      "titleColor": "#483500",
-      "subtitleColor": "#483500",
+      "titleColor": "#000000",
+      "subtitleColor": "#000000",
       "showSubtitle": true,
       "showInnerStroke": false,
       "startFromZero": false})
