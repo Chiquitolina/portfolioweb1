@@ -1,3 +1,13 @@
-<app-header></app-header>
-<app-skills></app-skills>
-<app-educacion></app-educacion>
+
+<app-toolbar>
+  <app-sidebar #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" ></app-sidebar>
+</app-toolbar>
+
+<app-perfil *ngIf="!router.url.includes('login')" ></app-perfil>
+
+<main>
+
+    <div [@routeAnimations]="prepareRoute(outlet)" style="margin-top: 0.7%;" >
+        <router-outlet #outlet="outlet"> </router-outlet>
+      </div>
+</main>

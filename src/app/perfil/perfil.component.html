@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="container">
+    <div class="container" style="margin-top: 0%">
+      <div class="row" style="
+            text-align: center;
+            border-radius: 0 0 32px 32px;
+            justify-content: center;
+          "></div>
+      <div class="row" style="justify-content: center; text-align: center">
+        <div class="col-4 col-md-3 col-sm-4 col-lg-2 perfil" style="background-color: #00446b; display: flex; justify-content: center; align-items: center;
+            border-radius: 0px 0px 32px 32px; overflow: hidden; ">
+          <div>
+            
+            <img src="/assets/img/fotocarnet.jpg" id="imagenperfil" />
+            <div fxLayoutAlign="start">
+              <button mat-mini-fab style="margin-left: 10%; margin-top: -30%; opacity: 84%;" color="">
+              <div><mat-icon style="color: black;">add_a_photo</mat-icon></div>
+            </button>
+          </div>
+          </div>
+
+        </div>
+        <div class="col-4 col-md-6 col-sm-4 col-lg-4 perfil" style="
+              background-color:#00446b;
+              
+            ">
+         
+            <hr fxShow.xs="true" style="color: black" />
+            <div fxLayoutAlign="center">
+              <h2 style="color: black; font-size: 23px;"> {{nombreAdmin + " " + segundonombreAdmin + " " + apellidoAdmin}}</h2>
+            </div> 
+            <hr style="color: black;" />
+            <h3 fxHide.xs="true" style="color: black;"> {{tituloAdmin}} </h3>
+            <hr fxHide.xs="true" style="color: black" />
+            <h3 fxHide.xs="true" style="color: black">25 años</h3>
+            <button mat-button style="color: grey; background-color: white; max-width: 100%; max-height: 100%;  opacity: 84%;" (click)="openDialog()"><mat-icon style="color: black;" fx>edit</mat-icon></button>	
+
+        </div>
+        <div class="col-4 col-md-3 col-sm-4 col-lg-2 perfil" style="
+              border-color: black;
+              background-color: #00446b;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding-top: 2%;
+              z-index: 1;
+              border-radius: 0px 0px 32px 32px;
+            ">
+          <div style="max-width: 100%; ">
+            <div>
+              <img src="/assets/img/point.png" id="point" />
+            </div>
+            <h3 style="color: black">{{ ciudadAdmin + ", " + provinciaAdmin + ", " + paisAdmin }}</h3>
+          </div>
+
+
+        </div>
+        <div class="col-10 col-md-3 col-sm-10 col-lg-2 perfil"
+          style="background-color: #00446b; justify-content: center; align-items: center; border-radius: 32px 32px 32px 32px; z-index: 0; margin-top: -2%;"
+          fxHide.lg="true" fxHide.md="true" fxHide.sm="true">
+          <div class="perfil" style="border-radius: 20px 20px 20px 20px; background-color: #00446b;">
+            <hr style="color: transparent;">
+            <div>
+              <h3 style="color: black; max-width: 100%;"> {{tituloAdmin}}</h3>
+            </div>
+            <hr>
+            <div>
+              <h3 style="color: black; max-width: 100%;">25 años</h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

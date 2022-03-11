@@ -1,0 +1,66 @@
+<app-sidebar 
+             (newItemEvent)="isCollapsed = $event"
+              #collapse="ngbCollapse" 
+              [(ngbCollapse)]="isCollapsed">
+            </app-sidebar>
+<mat-toolbar fxLayout="row" style="
+    background-color: grey;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+      z-index: 1010;
+  ">
+  <div>
+    <img src="/assets/img/argentinaprogramalogo2.png"
+      style="background-color: transparent; border-radius: 5px 5px 5px 5px" width="150" />
+  </div>
+  <div fxShow.lg="true">
+    <button mat-button (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div fxShow.xs="false">
+    <a routerLink=""><button mat-button class="button-toolbar">
+        <mat-icon>home</mat-icon>
+        Home
+      </button></a>
+  </div>
+
+  <div fxShow.xs="false">
+    <a routerLink="/skills"><button mat-button class="button-toolbar">
+        <mat-icon>build</mat-icon>
+        Skills
+      </button></a>
+  </div>
+  <a routerLink="/education">
+    <div fxShow.xs="false">
+      <button mat-button class="button-toolbar">
+        <mat-icon>school</mat-icon>
+        Education
+      </button>
+    </div>
+  </a>
+  <div fxShow.xs="false">
+    <button mat-button class="button-toolbar">
+      <mat-icon>work</mat-icon>
+      Projects
+    </button>
+  </div>
+  <div fxShow.xs="false" div fxShow.sm="false">
+    <button mat-button class="button-toolbar">
+      <mat-icon>face</mat-icon>
+      About Me
+    </button>
+  </div>
+  <div fxShow.xs="false" fxShow.md="false" fxShow.sm="false">
+    <button mat-button class="button-toolbar">
+      <mat-icon>contact_mail</mat-icon>
+      Contact
+    </button>
+  </div>
+  <div>
+    <button type="button" class="btn btn-dark" style="z-index: 3; display: flex; align-items: flex-end"
+      routerLink="login">
+      Login
+    </button>
+  </div>
+</mat-toolbar>
