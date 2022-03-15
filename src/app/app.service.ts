@@ -12,7 +12,5 @@ export class AppService {
 
     getAll() {
       return this.http.get('http://localhost:8080/ver/personas');
-    
-
    }
 }

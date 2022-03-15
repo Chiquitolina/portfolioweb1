@@ -10,13 +10,15 @@
         <div class="col-4 col-md-3 col-sm-4 col-lg-2 perfil" style="background-color: #00446b; display: flex; justify-content: center; align-items: center;
             border-radius: 0px 0px 32px 32px; overflow: hidden; ">
           <div>
-            
+
             <img src="/assets/img/fotocarnet.jpg" id="imagenperfil" />
             <div fxLayoutAlign="start">
-              <button mat-mini-fab style="margin-left: 10%; margin-top: -30%; opacity: 84%;" color="">
-              <div><mat-icon style="color: black;">add_a_photo</mat-icon></div>
-            </button>
-          </div>
+              <button mat-mini-fab style="margin-left: 0%; margin-top: -35%; opacity: 90%; max-width: 100%;" color="">
+                <div>
+                  <mat-icon style="color: black;">add_a_photo</mat-icon>
+                </div>
+              </button>
+            </div>
           </div>
 
         </div>
@@ -24,16 +26,25 @@
               background-color:#00446b;
               
             ">
-         
-            <hr fxShow.xs="true" style="color: black" />
-            <div fxLayoutAlign="center">
-              <h2 style="color: black; font-size: 23px;"> {{nombreAdmin + " " + segundonombreAdmin + " " + apellidoAdmin}}</h2>
-            </div> 
-            <hr style="color: black;" />
-            <h3 fxHide.xs="true" style="color: black;"> {{tituloAdmin}} </h3>
-            <hr fxHide.xs="true" style="color: black" />
-            <h3 fxHide.xs="true" style="color: black">25 años</h3>
-            <button mat-button style="color: grey; background-color: white; max-width: 100%; max-height: 100%;  opacity: 84%;" (click)="openDialog()"><mat-icon style="color: black;" fx>edit</mat-icon></button>	
+
+          <hr fxShow.xs="true" style="color: black" />
+          <div fxLayoutAlign="center">
+            <h2 style="color: black; font-size: 23px;"> {{nombreAdmin + " " + segundonombreAdmin + " " + apellidoAdmin}}
+            </h2>
+          </div>
+          <hr style="color: black;" />
+          <h3 fxHide.xs="true" style="color: black;"> {{tituloAdmin}} </h3>
+          <hr fxHide.xs="true" style="color: black" />
+          <h3 fxHide.xs="true" style="color: black">25 años</h3>
+          <div>
+          <button mat-fab
+            style="color: grey; background-color: white; max-width: 100%; max-height: 100%;  opacity: 84%;"
+            (click)="openDialog()">
+            <img src="/assets/img/editar.png" style="width: 20px;"/>
+            <div>
+            </div>
+          </button>
+        </div>
 
         </div>
         <div class="col-4 col-md-3 col-sm-4 col-lg-2 perfil" style="

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AutenticacionService } from '../autenticacion.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,7 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   form:FormGroup;
-  constructor(private formBuilder:FormBuilder) { 
+  constructor(private formBuilder:FormBuilder,
+                        private autenticacionService:AutenticacionService) { 
     this.form=this.formBuilder.group(
       {
           email:['', [Validators.required, Validators.email]],
@@ -29,6 +31,13 @@ export class LoginComponent implements OnInit {
 
 get Password() {
   return this.form.get('password');
+}
+
+onEnviar(event:Event) {
+  event.preventDefault;
+  this.autenticacionService.IniciarSesion(this.form.value).subscribe(data=>{
+    console.log("DATA" + JSON.stringify(data));
+  })
 }
 
 }

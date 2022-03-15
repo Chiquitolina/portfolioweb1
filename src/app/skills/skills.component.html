@@ -5,195 +5,41 @@
       class="row"
       style="border-radius: 32px 32px 0 0; background-color: #00446b; text-align: center;"
     >
-    <div class="col">
-      <h2 style="color: black; font: italic">Skills:</h2>
+    
+    <div class="col-5 perfil"><h2 style="color: black;">Frontend</h2></div>
+    <div class="col-2">
+      <div fxLayoutAlign="center"><button mat-mini-fab color=""> + </button></div> 
     </div>
+      <div class="col-5 perfil"><h2 style="color: black;">Backend</h2></div>
+    
     </div>
   </div>
   <div class="container" style="background-color: #00446b; border-radius: 0 0 32px 32px">
-    <div class="row" style="border-radius: 32px 32px 32px 32px">
-      <div
-        class="col-3 perfil clase"
-        style="
-          border-radius: 0 0 32px 32px;
-          background-color: white;
-          background-color: white;
-        "
-      >
-        <div fxLayoutAlign="center">
-          <circle-progress
-            [percent]="70"
-            [animationDuration]="1000"
-            backgroundColor="#d94301"
-            subtitleFontSize="15"
-            subtitle="HTML"
-          ></circle-progress>
-        </div>
-      </div>
-      <div
-        class="col-3 perfil clase"
-        style="
-          border-radius: 0 0 32px 32px;
-          background-color: white;
-          background-color: white;
-        "
-      >
-        <div fxLayoutAlign="center">
-          <circle-progress
-            [percent]="70"
-            [animationDuration]="1000"
-            backgroundColor="#00446b"
-            subtitleFontSize="15"
-            subtitle="CSS"
-          ></circle-progress>
-        </div>
-      </div>
-      <div
-        class="col-3 perfil clase"
-        style="
-          border-radius: 0 0 32px 32px;
-          background-color: white;
-          background-color: white;
-          justify-content: center;
-        "
-      >
-        <div fxLayoutAlign="center">
-          <circle-progress
-            [percent]="70"
-            [animationDuration]="1000"
-            backgroundColor="#ffd200"
-            subtitleFontSize="15"
-            subtitle="JavaScript"
-          ></circle-progress>
-        </div>
-      </div>
-      <div
-        class="col-3 perfil clase"
-        style="
-          border-radius: 0 0 32px 32px;
-          background-color: white;
-          background-color: white;
-                    justify-content: center;
-        "
-      >
-        <div fxLayoutAlign="center">
-          <circle-progress
-            [percent]="70"
-            [animationDuration]="1000"
-            backgroundColor="#2271b3"
-            subtitleFontSize="15"
-            subtitle="TypeScript"
-          ></circle-progress>
-        </div>
-      </div>
-    </div>
-    <div class="row" style="border-radius: 32px 32px 32px 32px">
-      <div
-        class="col-3 perfil clase"
-        style="
-          border-radius: 32px 32px 32px 32px;
-          background-color: white;
-          background-color: white;
-          justify-content: center;
-        "
-      >
-        <div fxLayoutAlign="center">
-          <circle-progress
-            [radius]="40"
-            [percent]="70"
-            [animationDuration]="1000"
-            backgroundColor="#8A2BE2"
-            subtitleFontSize="15"
-            subtitle="Bootstrap"
-          ></circle-progress>
-        </div>
-      </div>
-      <div
-        class="col-3 perfil clase"
-        style="
-          border-radius: 32px 32px 32px 32px;
-          background-color: white;
-          background-color: white;
-          justify-content: center;
-        "
-      >
-        <div fxLayoutAlign="center">
-          <circle-progress
-            [radius]="40"
-            [percent]="70"
-            [animationDuration]="1000"
-            backgroundColor="#cb3234"
-            subtitleFontSize="15"
-            subtitle="Angular"
-          ></circle-progress>
-        </div>
-      </div>
-    </div>
-    <div class="row" style="border-radius: 32px 32px 32px 32px">
-      <div
-      class="col-3 perfil clase"
-      style="
-        border-radius: 32px 32px 32px 32px;
-        background-color: white;
-        background-color: white;
-        justify-content: center;
-      "
-    >
-      <div fxLayoutAlign="center">
-        <circle-progress
-        [radius]="40"
-          [percent]="70"
-          [animationDuration]="1000"
-          subtitleFontSize="15"
-          subtitle="JAVA"
-          backgroundColor="#ff0000"
-        ></circle-progress>
-      </div>
-    </div>
-      <div
-        class="col-3 perfil clase"
-        style="
-          border-radius: 32px 32px 32px 32px;
-          background-color: white;
-          background-color: white;
-          justify-content: center;
-        "
-      >
-        <div fxLayoutAlign="center">
-          <circle-progress
-          [radius]="40"
 
-            [percent]="70"
-            [animationDuration]="1000"
-            backgroundColor="#5ab507"
-            subtitleFontSize="15"
-            subtitle="Spring"
-          ></circle-progress>
-        </div>
-        </div>
-      <div
-        class="col-3 perfil clase"
-        style="
-          border-radius: 32px 32px 32px 32px;
-          background-color: white;
-          background-color: white;
-          justify-content: center;
-        "
-      >
-        <div fxLayoutAlign="center">
-          <circle-progress
-          [radius]="40"
-
-            [percent]="70"
-            [animationDuration]="1000"
-            backgroundColor="#ff8000"
-            subtitleFontSize="15"
-            subtitle="MySQL"
-          ></circle-progress>
-        </div>
-      </div>
-    </div>
-
+ <div class="row">
+<div fxLayoutAlign="center" *ngFor="let skill of skillsPersona; let i = index" class="col-3 perfil clase"
+style="
+  border-radius: 32px 32px 32px 32px;
+  background-color: white;
+  background-color: white;
+">
+<div>
+<div fxLayoutAlign="center" style="display: flex; flex-direction: row;">
+<mat-icon>edit</mat-icon>
+<mat-icon>delete</mat-icon>
+</div>
+<div></div>
+<circle-progress
+  [radius]="40"
+  [percent]= skillsPersona[i].porcentaje
+  [animationDuration]="1000"
+  [backgroundColor] = skillsPersona[i].color
+  subtitleFontSize="15"
+  [subtitle] = skillsPersona[i].nombre
+></circle-progress></div>
   </div>
 </div>
+</div>   
 </div>
+</div>
+

@@ -1,7 +1,7 @@
 
 
 <div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center" style="margin-top: 10%">
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="onEnviar($event)">
     <mat-card class="box">
       <mat-card-header>
         <mat-card-title>Sign In</mat-card-title>
