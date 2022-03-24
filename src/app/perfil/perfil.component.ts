@@ -39,9 +39,9 @@ descripcion:string = "Estudiante de Licenciatura en Ciencias de la Computación 
                ) { }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(EditDialogComponent, {});
+    const dialogRef = this.dialog.open(EditDialogComponent, {height:'600px',width:'400px'});
     dialogRef.afterClosed().subscribe(res => {
-      console.log(res);
+
     }
       );
   }

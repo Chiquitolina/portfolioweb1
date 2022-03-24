@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { animate, trigger, style, transition, state } from '@angular/animations';
 import { SkillService } from '../skill.service';
+import { data } from 'jquery';
 
 @Component({
   selector: 'app-skills',
@@ -18,6 +19,13 @@ export class SkillsComponent implements OnInit {
   skillColor:string = "";
 
   constructor(private service: SkillService) { }
+  
+
+  deleteSkill(id:number) {
+     this.service.deleteSkill(id).subscribe(data => {}
+
+     );
+  }
 
   ngOnInit(): void {
     this.service.getAll()

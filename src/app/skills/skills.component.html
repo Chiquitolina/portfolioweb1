@@ -17,18 +17,14 @@
   <div class="container" style="background-color: #00446b; border-radius: 0 0 32px 32px">
 
  <div class="row">
-<div fxLayoutAlign="center" *ngFor="let skill of skillsPersona; let i = index" class="col-3 perfil clase"
-style="
-  border-radius: 32px 32px 32px 32px;
-  background-color: white;
-  background-color: white;
-">
+<div fxLayoutAlign="center" *ngFor="let skill of skillsPersona; let i = index" class="col-3 perfil clase
+"
+style="min-width: 100px;">
 <div>
 <div fxLayoutAlign="center" style="display: flex; flex-direction: row;">
-<mat-icon>edit</mat-icon>
-<mat-icon>delete</mat-icon>
+<button style="width: 40px"><mat-icon>edit</mat-icon></button>
+<button style="width: 40px" (click)="deleteSkill(skillsPersona[i].id)"><mat-icon>delete</mat-icon></button>
 </div>
-<div></div>
 <circle-progress
   [radius]="40"
   [percent]= skillsPersona[i].porcentaje

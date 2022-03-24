@@ -5,14 +5,27 @@
       style="
         border-radius: 32px 32px 0 0;
         background-color: #00446b;
-
+        
       "
     >
-    <div class="col-5 perfil"><h2 style="color: black;">University</h2></div>
-    <div class="col-2">
+   
+    <div class="col-12 perfil">
       <div fxLayoutAlign="center"><button mat-mini-fab color=""> + </button></div> 
     </div>
-      <div class="col-5 perfil"><h2 style="color: black;">Backend</h2></div>
+    </div>
+    <div *ngFor="let education of educationsPersona; let i = index" class="row" style="background-color: #00446b;">
+      <div class="col-4 perfil clase" style="background-color: white;">
+        
+      </div>
+      <div class="col perfil clase" style="background-color: white; text-align: center;">
+        <h2>{{educationsPersona[i].titulo}}</h2> 
+        <h3>Institution: </h3><a href="{{educationsPersona[i].urlWebInstitucion}}"><h3>{{educationsPersona[i].institucion}}</h3></a>
+        <h3>Duration: </h3><h3>{{educationsPersona[i].duracion}}</h3>
+        <div fxLayoutAlign="center" style="display: flex; flex-direction: row;">
+          <button style="width: 40px"><mat-icon>edit</mat-icon></button>
+          <button style="width: 40px" (onClick)="deleteEducation(educationsPersona[i].id)"><mat-icon>delete</mat-icon></button>
+          </div>
+      </div>
     </div>
   </div>
 </div>
