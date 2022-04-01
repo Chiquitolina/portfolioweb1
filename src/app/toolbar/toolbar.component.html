@@ -1,48 +1,40 @@
-<app-sidebar 
-             (newItemEvent)="isCollapsed = $event"
-              #collapse="ngbCollapse" 
-              [(ngbCollapse)]="isCollapsed">
-            </app-sidebar>
-<mat-toolbar fxLayout="row" style="
-    background-color: grey;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-      z-index: 1010;
-  ">
+
+
+<mat-toolbar fxLayout="row" class="bar">
  
   <div fxShow.lg="true">
-    <button mat-button (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed">
+    <button mat-button (click)="inputSideNav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
   </div>
-  <div fxShow.xs="false">
+  <div fxShow.xs="false" fxShow.md="false" fxShow.sm="false">
     <a routerLink=""><button mat-button class="button-toolbar">
         <mat-icon>home</mat-icon>
         Home
       </button></a>
   </div>
 
-  <div fxShow.xs="false">
+  <div fxShow.xs="false" fxShow.md="false" fxShow.sm="false">
     <a routerLink="/skills"><button mat-button class="button-toolbar">
         <mat-icon>build</mat-icon>
         Skills
       </button></a>
   </div>
   <a routerLink="/education">
-    <div fxShow.xs="false">
+    <div fxShow.xs="false" fxShow.md="false" fxShow.sm="false">
       <button mat-button class="button-toolbar">
         <mat-icon>school</mat-icon>
         Education
       </button>
     </div>
   </a>
-  <div fxShow.xs="false">
+  <div fxShow.xs="false" fxShow.md="false" fxShow.sm="false">
     <button mat-button class="button-toolbar">
       <mat-icon>work</mat-icon>
       Projects
     </button>
   </div>
-  <div fxShow.xs="false" div fxShow.sm="false">
+  <div fxShow.xs="false" fxShow.md="false" fxShow.sm="false">
     <button mat-button class="button-toolbar">
       <mat-icon>face</mat-icon>
       About Me

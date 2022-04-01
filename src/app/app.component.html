@@ -1,13 +1,36 @@
 
-<app-toolbar>
-  <app-sidebar #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" ></app-sidebar>
-</app-toolbar>
+
+
+  <app-toolbar [inputSideNav]="sideNav">
+
+  </app-toolbar>
+
+  
+<mat-sidenav-container style="background-color: black;">
+
+<mat-sidenav  #sideNav
+              mode="over"
+              class="bar"
+              style="border-radius: 32px 32px 32px 32px; 
+                      background-color: grey;">
+
+<app-sidebar [inputSideNav]="sideNav"></app-sidebar> 
+
+</mat-sidenav>
+
+<mat-sidenav-content>
 
 <app-perfil *ngIf="!router.url.includes('login')" ></app-perfil>
 
 <main>
 
-    <div [@routeAnimations]="prepareRoute(outlet)" style="margin-top: 0.3%;" >
-        <router-outlet #outlet="outlet"> </router-outlet>
+    <div style="margin-top: 0.3%;" >
+        <router-outlet> </router-outlet>
       </div>
 </main>
+
+</mat-sidenav-content>
+
+
+</mat-sidenav-container>
+

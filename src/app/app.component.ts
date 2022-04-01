@@ -10,7 +10,7 @@ import { fader, slideInAnimation } from './route-animations';
 })
 export class AppComponent {
 
-  public isCollapsed = true;
+
 
 
   prepareRoute(outlet: RouterOutlet) {

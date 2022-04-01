@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,13 +9,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  @Input() garchStatus: boolean;
-  @Output() newItemEvent = new EventEmitter<boolean>();
-
-
-prueba() {
-  this.newItemEvent.emit(!this.garchStatus);
-}
+  @Input() inputSideNav:MatSidenav;
 
   constructor() { }
 

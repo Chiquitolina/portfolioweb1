@@ -6,24 +6,24 @@
       style="border-radius: 32px 32px 0 0; background-color: #00446b; text-align: center;"
     >
     
-    <div class="col-5 perfil"><h2 style="color: black;">Frontend</h2></div>
-    <div class="col-2">
+  
+    <div class="col">
       <div fxLayoutAlign="center"><button mat-mini-fab color=""> + </button></div> 
     </div>
-      <div class="col-5 perfil"><h2 style="color: black;">Backend</h2></div>
+
     
     </div>
   </div>
   <div class="container" style="background-color: #00446b; border-radius: 0 0 32px 32px">
 
- <div class="row">
+ <div class="row" style="display: flex; justify-content: center;">
 <div fxLayoutAlign="center" *ngFor="let skill of skillsPersona; let i = index" class="col-3 perfil clase
 "
-style="min-width: 100px;">
+style="min-width: 100px; display: flex; justify-content: center;">
 <div>
 <div fxLayoutAlign="center" style="display: flex; flex-direction: row;">
-<button style="width: 40px"><mat-icon>edit</mat-icon></button>
-<button style="width: 40px" (click)="deleteSkill(skillsPersona[i].id)"><mat-icon>delete</mat-icon></button>
+<button style="width: 40px; border-radius: 20px 20px 20px 20px; "><mat-icon>edit</mat-icon></button>
+<button style="width: 40px; border-radius: 20px 20px 20px 20px;" (click)="deleteSkill(skillsPersona[i].id)"><mat-icon>delete</mat-icon></button>
 </div>
 <circle-progress
   [radius]="40"

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,8 +8,14 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
+  @Input() inputSideNav:MatSidenav;
+
   public isCollapsed = true;
   mostrarBanner: boolean = true;
+
+  changesidebarState() {
+
+  }
 
   hideBanner() {
   this.mostrarBanner = false
@@ -17,6 +24,8 @@ export class ToolbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+
   }
 
 }

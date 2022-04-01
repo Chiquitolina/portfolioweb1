@@ -30,6 +30,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { NgbModule } from'@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { SkillsDialogComponent } from './skills-dialog/skills-dialog.component';
 
 
 
@@ -44,7 +45,8 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
     PerfilComponent,
     LoginComponent,
     SidebarComponent,
-    EditDialogComponent
+    EditDialogComponent,
+    SkillsDialogComponent
   ],
   imports: [
     BrowserModule,
