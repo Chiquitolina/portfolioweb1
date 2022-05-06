@@ -6,6 +6,8 @@ import { AppService } from '../app.service';
 import { DataSource } from '@angular/cdk/collections';
 import { MatDialog } from '@angular/material/dialog';
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
+import { Persona } from '../Models/Persona';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-perfil',
@@ -15,31 +17,18 @@ import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 
 export class PerfilComponent implements OnInit {
 
-datosPersona:any [] = []; 
+  personasForm = FormGroup;
 
-nombreAdmin:string = "";
-
-segundonombreAdmin:string = "";
-
-apellidoAdmin:string = "";
-
-ciudadAdmin:string = "";
-
-provinciaAdmin:string = "";
-
-paisAdmin:string = "";
-
-tituloAdmin:string = "";
-
-descripcion:string = "Estudiante de Licenciatura en Ciencias de la Computación en la Facultad de Ciencias Exactas, Ingeniería y Agrimensura de la Universidad Nacional de Rosario.";
+personas:Persona[];
 
   constructor( public router: Router,
                private service: AppService,
-               public dialog: MatDialog
+               public dialog: MatDialog,
+               private formBuilder: FormBuilder
                ) { }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(EditDialogComponent, {height:'600px',width:'400px'});
+    const dialogRef = this.dialog.open(EditDialogComponent, {height:'608px',width:'400px', data: this.personas},);
     dialogRef.afterClosed().subscribe(res => {
 
     }
@@ -49,20 +38,9 @@ descripcion:string = "Estudiante de Licenciatura en Ciencias de la Computación 
   ngOnInit(): void {
 
     this.service.getAll()
-    .subscribe((res: any) => {
-    this.datosPersona = res;
-    this.nombreAdmin = this.datosPersona[0].nombre;
-    this.apellidoAdmin = this.datosPersona[0].apellido;
-    this.segundonombreAdmin = this.datosPersona[0].segundonombre;
-    this.ciudadAdmin = this.datosPersona[0].ciudad;
-    this.provinciaAdmin = this.datosPersona[0].provincia;
-    this.paisAdmin = this.datosPersona[0].pais;
-    this.tituloAdmin = this.datosPersona[0].titulo;
+    .subscribe(res => {
+      this.personas = res;})
 
-    });
     
-  }
-
-  
-
+  } 
 }

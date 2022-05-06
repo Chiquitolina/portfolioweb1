@@ -1,0 +1,32 @@
+<form [formGroup]="educationsForm" style="text-align:center">
+    <div class="form-group">
+    <b><label>Duracion:</label></b>
+      <input type="email" class="form-control" formControlName="duracion" value="">
+    </div>
+      <div class="form-group">
+        <b><label>Institucion:</label></b>
+        <input type="email" formControlName="institucion" class="form-control" value="">
+      </div>
+      <div class="form-group">
+        <b><label>Titulo:</label></b>
+        <input type="email" class="form-control" value="" formControlName="titulo">
+      </div>
+      <div class="form-group">
+        <b><label>URL certificado:</label></b>
+        <input type="email" class="form-control" value=""  formControlName="url_certificado">
+      </div>
+      <div class="form-group">
+        <b><label>URL web institución:</label></b>
+        <input type="email" class="form-control" value="" formControlName="url_web_institucion">
+      </div>
+    </form>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <div style="margin-top: 3%;">
+    <button type="submit" class="btn btn-primary" (click)="saveEducation()" [mat-dialog-close]="true">Submit</button>
+  </div>
+  <div style="margin-top: 3%;">
+    <button type="submit" class="btn btn-primary" [mat-dialog-close]="true">Cancel</button>
+  </div>
+</div>
+

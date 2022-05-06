@@ -31,6 +31,9 @@ import { NgbModule } from'@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { SkillsDialogComponent } from './skills-dialog/skills-dialog.component';
+import { ProyectsDialogComponent } from './proyects-dialog/proyects-dialog.component';
+import { EducationDialogComponent } from './education-dialog/education-dialog.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -46,7 +49,10 @@ import { SkillsDialogComponent } from './skills-dialog/skills-dialog.component';
     LoginComponent,
     SidebarComponent,
     EditDialogComponent,
-    SkillsDialogComponent
+    SkillsDialogComponent,
+    ProyectsDialogComponent,
+    EducationDialogComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -54,12 +60,13 @@ import { SkillsDialogComponent } from './skills-dialog/skills-dialog.component';
     NgCircleProgressModule.forRoot({
       "backgroundColor": "#FDB900",
       "radius": 40,
-      "maxPercent": 200,
+      "maxPercent": 100,
       "units": " %",
       "unitsColor": "#000000",
-      "outerStrokeWidth": 5,
-      "outerStrokeColor": "#FFFFFF",
-      "innerStrokeColor": "#FFFFFF",
+      "outerStrokeWidth": 1,
+      "innerStrokeWidth": 5,
+      "outerStrokeColor": "black",
+      "innerStrokeColor": "black",
       "titleColor": "#000000",
       "subtitleColor": "#000000",
       "showSubtitle": true,

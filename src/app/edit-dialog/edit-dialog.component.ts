@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject, Input } from '@angular/core';
+import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AppService } from '../app.service';
+import { Persona } from '../Models/Persona';
 
 
 @Component({
@@ -11,45 +13,39 @@ import { AppService } from '../app.service';
 export class EditDialogComponent implements OnInit {
 
   datosPersona:any[] = [];
-  
-nombreAdmin:string = "";
 
-segundonombreAdmin:string = "";
-
-apellidoAdmin:string = "";
-
-ciudadAdmin:string = "";
-
-provinciaAdmin:string = "";
-
-paisAdmin:string = "";
-
-tituloAdmin:string = "";
-
-emailAdmin:String = "";
-
+  persona:Persona[];
+ 
   @Input() nombres:string;
   
-
+  personasForm !: FormGroup;
   constructor(
+    private formBuilder: FormBuilder,
     private service: AppService,
     public dialogRef: MatDialogRef<EditDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public message:string) { }
+    @Inject(MAT_DIALOG_DATA) public data_:any) { }
+
+  saveInfo() {
+    this.service.update(this.data_[0].id ,this.personasForm.value)
+    .subscribe(data=> {
+    })
+    console.log(this.personasForm.value)      
+      }
+  
 
   ngOnInit(): void {
-    this.service.getAll()
-    .subscribe((res: any) => {
-      this.datosPersona = res;
-      this.nombreAdmin = this.datosPersona[0].nombre;
-      this.apellidoAdmin = this.datosPersona[0].apellido;
-      this.segundonombreAdmin = this.datosPersona[0].segundonombre;
-      this.ciudadAdmin = this.datosPersona[0].ciudad;
-      this.provinciaAdmin = this.datosPersona[0].provincia;
-      this.paisAdmin = this.datosPersona[0].pais;
-      this.tituloAdmin = this.datosPersona[0].titulo;
-      this.emailAdmin = this.datosPersona[0].email;
-    
+    this.personasForm = this.formBuilder.group ( {
+      id: [this.data_[0].id, Validators.required],
+      nombre: [this.data_[0].nombre, Validators.required],
+      segundonombre: [this.data_[0].segundonombre, Validators.required],
+      apellido: [this.data_[0].apellido, Validators.required],
+      ciudad: [this.data_[0].ciudad, Validators.required],
+      provincia: [this.data_[0].provincia, Validators.required],
+      pais: [this.data_[0].pais, Validators.required],
+      email: [this.data_[0].email, Validators.required],
+      titulo: [this.data_[0].email, Validators.required]
     })
+    console.log(this.data_)
   }
 
 }

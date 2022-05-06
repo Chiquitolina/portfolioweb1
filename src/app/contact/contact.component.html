@@ -1,0 +1,26 @@
+    <div class="container">
+    <div fxLayoutAlign="center" style="background-color: #00446b; border-radius: 20px 20px 20px 20px;" >
+    <form id="contact" class="text-center border-light" [formGroup]="contactForm" style="width: 70%;">
+        <h1>Send me a message! :)</h1>
+        <!-- Name -->
+        <div style="margin-top: 2%;">
+        <input type="text" formControlName="contactFormName" id="defaultContactFormName" mdbInput
+          class="form-control mb-2" placeholder="Name">
+        <!-- Email -->
+        <input type="email" formControlName="contactFormEmail" id="defaultContactFormEmail" mdbInput
+          class="form-control mb-2" placeholder="E-mail">
+
+        <!-- Message -->
+        <div class="form-group">
+          <textarea formControlName="contactFormMessage" class="form-control rounded-0 mb-2" mdbInput id="exampleFormControlTextarea2"
+            rows="3" placeholder="Message"></textarea>
+            <button color="info" outline="true" class="btn btn-primary"
+            mdbWavesEffect type="submit">Send</button>
+        </div>
+        </div>
+        <!-- Copy -->
+        <!-- Send button -->
+       
+      </form>
+    </div>
+    </div>
