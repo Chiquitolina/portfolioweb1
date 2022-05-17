@@ -20,5 +20,4 @@ export class AppService {
       return this.http.put('http://localhost:8080/update/persona/'+id, persona)
     }
 
-
 }
