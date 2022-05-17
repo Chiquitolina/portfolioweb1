@@ -24,6 +24,7 @@ export class SkillsComponent implements OnInit {
 
   edit : any[];
   editando:boolean = false;
+  editado:boolean = false;
 
   skillsForm = FormGroup;
 
@@ -42,9 +43,10 @@ export class SkillsComponent implements OnInit {
     this.editando = false;
 
     const dialogRef = this.dialog.open(SkillsDialogComponent, 
-      {height:'300px',width:'400px', data:[
-       this.edit, this.editando]});
+      {height:'280px',width:'400px', data:[
+       this.edit, this.editando, this.editado]});
     dialogRef.afterClosed().subscribe(res => {
+      
     }
    );
     }
@@ -56,7 +58,7 @@ export class SkillsComponent implements OnInit {
 
     const dialogRef = this.dialog.open(SkillsDialogComponent, 
       {height:'300px',width:'400px', data:[
-       this.edit, this.editando]});
+       this.edit, this.editando, this.editado]});
     dialogRef.afterClosed().subscribe(res => {
     }
    );

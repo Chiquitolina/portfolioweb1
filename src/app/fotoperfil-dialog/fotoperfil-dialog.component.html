@@ -1,0 +1,29 @@
+
+<div style="text-align: center;">
+    <div style="display: flex;">
+    <div class="" style="display: flex; flex-direction: column; justify-content: space-between; width: 50%;">
+        <label>Actual:</label>
+        <div class="perfil" style="justify-content: center;  padding: 2%; background-color: #00446b;">
+        <img class="imagenperfil" style="max-width: 100%;"
+            src="https://firebasestorage.googleapis.com/v0/b/portfolioweb-9e852.appspot.com/o/users%2Feeeeeee?alt=media&token=58d846e7-ebd8-4f38-998b-e680b6ec763a">
+        </div>
+    </div>
+    <div class="" style="display: flex; flex-direction: column; justify-content: space-between; width: 50%;">
+        <label>New:</label>
+        <div class="perfil" style="display: flex; flex-direction:column; border-radius: 0px 0px 32px 32px; padding: 2%;background-color: #00446b; align-items: center;"> 
+            <img class="imagenperfil"
+            src="{{imagenes[0]}}">
+        </div>  
+        </div>
+    </div>
+    
+    <div style="display: flex; flex-direction:column; margin-top: 5%;">
+
+        <input type="file" accept=".jpg, .jpeg, .png" (change)="cargarImagen($event)">
+
+        <b><label>Tamaño recomendado: </label></b>
+        <label>720px x 1280px </label>
+        <button class="btn btn-primary" [mat-dialog-close]="true" (click)="submit()" style="margin-top: 3%;">Submit</button>
+        <button class="btn btn-primary" [mat-dialog-close]="true" style="margin-top: 3%;">Cancel</button>
+    </div>
+</div>

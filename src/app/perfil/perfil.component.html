@@ -1,6 +1,6 @@
 <div class="container">
   <div class="container">
-    <div class="container"  *ngFor="let persona of personas; let i = index" style="margin-top: 0%;">
+    <div class="container" *ngFor="let persona of personas; let i = index" style="margin-top: 0%; ">
       <div class="row" style="
             text-align: center;
             border-radius: 0 0 32px 32px;
@@ -8,12 +8,12 @@
           "></div>
       <div class="row" style="justify-content: center; text-align: center;">
         <div class="col-4 col-md-3 col-sm-4 col-lg-2 perfil" style="background-color: #00446b; display: flex; justify-content: center; align-items: center;
-            border-radius: 0px 0px 32px 32px; overflow: hidden ;">
+            border-radius: 0px 0px 32px 32px; overflow: hidden ; box-shadow: inset 16px 0px 152px -65px rgba(0,0,0,0.75);">
           <div>
 
-            <img src="/assets/img/fotocarnet.jpg" id="imagenperfil" />
+            <img src="https://firebasestorage.googleapis.com/v0/b/portfolioweb-9e852.appspot.com/o/users%2Feeeeeee?alt=media&token=58d846e7-ebd8-4f38-998b-e680b6ec763a" class="imagenperfil" />
             <div fxLayoutAlign="start">
-              <button mat-mini-fab style="margin-left: 0%; margin-top: -35%; opacity: 90%; max-width: 100%;" color="">
+              <button (click)="dialogFoto()" mat-mini-fab style="margin-left: 0%; margin-top: -35%; max-width: 100%;" color="">
                 <div>
                   <mat-icon style="color: black;">add_a_photo</mat-icon>
                 </div>
@@ -24,12 +24,14 @@
         </div>
         <div class="col-4 col-md-6 col-sm-4 col-lg-4 perfil" style="
               background-color:#00446b;
-              
+
+
             ">
 
           <hr fxShow.xs="true" style="color: black" />
-          <div fxLayoutAlign="center">
-            <h2 style="color: black; font-size: 23px;"> {{persona.nombre}} {{persona.segundonombre}} {{persona.apellido}}
+          <div fxLayoutAlign="center" style="">
+            <h2 style="color: black; font-size: 23px;"> {{persona.nombre}} {{persona.segundonombre}}
+              {{persona.apellido}}
             </h2>
           </div>
           <hr style="color: black;" />
@@ -37,14 +39,13 @@
           <hr fxHide.xs="true" style="color: black" />
           <h3 fxHide.xs="true" style="color: black">25 años</h3>
           <div>
-          <button mat-fab
-            style="color: grey; background-color: white; max-width: 100%; max-height: 100%;  opacity: 84%;"
-            (click)="openDialog()">
-            <img src="/assets/img/editar.png" style="width: 20px;"/>
-            <div>
-            </div>
-          </button>
-        </div>
+            <button mat-fab style="color: grey; background-color: white; max-width: 100%; max-height: 100%;"
+              (click)="openDialog()">
+              <img src="/assets/img/editar.png" style="width: 20px;" />
+              <div>
+              </div>
+            </button>
+          </div>
 
         </div>
         <div class="col-4 col-md-3 col-sm-4 col-lg-2 perfil" style="
@@ -56,6 +57,7 @@
               padding-top: 2%;
               z-index: 1;
               border-radius: 0px 0px 32px 32px;
+              box-shadow: inset 16px 0px 152px -65px rgba(0,0,0,0.75);
             ">
           <div style="max-width: 100%; ">
             <div>

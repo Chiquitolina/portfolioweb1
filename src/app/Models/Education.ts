@@ -5,4 +5,5 @@ institucion:string;
 titulo:string;
 url_certificado:string;	
 url_web_institucion:string;
+urlImagen:string;
 }

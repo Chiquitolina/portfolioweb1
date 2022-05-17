@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="container">
+  <div class="container" style="background-color: #00446b; border-radius: 32px 32px 0px 0px;">
     <div
       class="row"
       style="
@@ -13,13 +13,17 @@
       <div fxLayoutAlign="center"><button mat-mini-fab color="" (click)="openDialog(education)"> + </button></div> 
 
     </div>
-    <div *ngFor="let education of educations; let i = index" class="row" style="background-color: #00446b;">
-      <div class="col-4 perfil clase" style="background-color: white;">
+    <div *ngFor="let education of educations; let i = index" class="row clase" style="background-color: #00446b;">
+      <div class="col-4 perfil" style="display: flex; justify-content:center; align-items:center; background-color: white; border-radius: 32px 32px 32px 32px;">
+        <div>
         
+          <img style="max-height: 100px; max-width: 80%;" src="{{education.urlImagen}}">
+          <button (click)="openFotoDialog()" class="edit-buttons"><mat-icon>edit</mat-icon></button>
+        </div>
       </div>
-      <div class="col perfil clase" style="background-color: white; text-align: center;">
+      <div class="col perfil" style="background-color: white; text-align: center; border-radius: 32px 32px 32px 32px;">
         <h2>{{education.titulo}}</h2> 
-        <h3>Institution: </h3><a href="www.google.com"><h3>{{education.institucion}}</h3></a>
+        <h3>Institution: </h3><a href="{{education.url_web_institucion}}">{{education.institucion}}</a>
         <h3>Duration: </h3><h3>{{education.duracion}}</h3>
         <div fxLayoutAlign="center" style="display: flex; flex-direction: row;">
           <button class="edit-buttons" (click)="openEditDialog(education)"><mat-icon>edit</mat-icon></button>

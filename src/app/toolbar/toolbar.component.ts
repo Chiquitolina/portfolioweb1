@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSidenav } from '@angular/material/sidenav';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-toolbar',
@@ -21,11 +23,23 @@ export class ToolbarComponent implements OnInit {
   this.mostrarBanner = false
   }
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
 
 
+    
+  }
+
+  
+  login() {
+    const dialogRef = this.dialog.open(LoginComponent, 
+      {height:'500px',width:'400px', data:[
+       ]});
+    dialogRef.afterClosed().subscribe(res => {
+      
+    }
+   );
   }
 
 }

@@ -58,8 +58,8 @@ border-radius: 0 0 0 1rem;
 
 #banner {
    border-radius: 32px 32px 32px 32px;
-   width: 80%;
-height: 300px;}
+   max-width: 100%;
+}
 
 .perfil {
     z-index: 3; 
@@ -80,9 +80,10 @@ box-shadow: 0px 13px 13px -4px rgba(0,0,0,0.75);
 
 
 
-#imagenperfil {
+.imagenperfil {
     border-radius: 50%;
     box-shadow: 0px 13px 13px -4px rgba(0,0,0,0.75);
+    min-height: 230px;
     max-height: 230px;
     max-width: 100%;
 }
@@ -211,8 +212,8 @@ color:black
 }
 
 @media (max-width: 1024px) {
-    #imagenperfil {
-    max-height: 200px; }
+    .imagenperfil {
+    max-width: 100%; }
 
     #point {
      width: 40px;

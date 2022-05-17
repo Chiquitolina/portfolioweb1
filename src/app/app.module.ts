@@ -34,6 +34,10 @@ import { SkillsDialogComponent } from './skills-dialog/skills-dialog.component';
 import { ProyectsDialogComponent } from './proyects-dialog/proyects-dialog.component';
 import { EducationDialogComponent } from './education-dialog/education-dialog.component';
 import { ContactComponent } from './contact/contact.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { AboutmeComponent } from './aboutme/aboutme.component';
+import { FotoperfilDialogComponent } from './fotoperfil-dialog/fotoperfil-dialog.component';
+import { FotoinstitucionDialogComponent } from './fotoinstitucion-dialog/fotoinstitucion-dialog.component';
 
 
 
@@ -52,7 +56,11 @@ import { ContactComponent } from './contact/contact.component';
     SkillsDialogComponent,
     ProyectsDialogComponent,
     EducationDialogComponent,
-    ContactComponent
+    ContactComponent,
+    ProjectsComponent,
+    AboutmeComponent,
+    FotoperfilDialogComponent,
+    FotoinstitucionDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -23,6 +23,8 @@ export class SkillsDialogComponent implements OnInit {
         })
         console.log(this.skillsForm.value)      
           }
+    this.data[2] = true;
+    location.reload();
   }
 
   skillsPersona:any [] = [];
@@ -49,6 +51,7 @@ export class SkillsDialogComponent implements OnInit {
       })
     }
     console.log(this.data);
+
   }
 
 }

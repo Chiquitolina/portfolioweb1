@@ -1,0 +1,20 @@
+<div style="text-align: center;">
+    <div style="display: flex;">
+    <div class="" style="display: flex; flex-direction: column; justify-content: space-between; width: 100%;">
+        <div class="perfil" style="justify-content: center;  padding: 2%; background-color: white;">
+        <img class="" style="max-width: 100%;"
+            src="{{imagenes[0]}}">
+        </div>
+    </div>
+    </div>
+    
+    <div style="display: flex; flex-direction:column; margin-top: 5%;">
+
+        <input type="file" accept=".jpg, .jpeg, .png" (change)="cargarImagen($event)">
+
+        <b><label>Tamaño recomendado: </label></b>
+        <label>720px x 1280px </label>
+        <button class="btn btn-primary" [mat-dialog-close]="true" style="margin-top: 3%;">Submit</button>
+        <button class="btn btn-primary" [mat-dialog-close]="true" style="margin-top: 3%;">Cancel</button>
+    </div>
+</div>

@@ -29,13 +29,13 @@
     </div>
   </a>
   <div fxShow.xs="false" fxShow.md="false" fxShow.sm="false">
-    <button routerLink="projects" mat-button class="button-toolbar">
+    <button mat-button class="button-toolbar" routerLink="project">
       <mat-icon>work</mat-icon>
       Projects
     </button>
   </div>
   <div fxShow.xs="false" fxShow.md="false" fxShow.sm="false">
-    <button mat-button class="button-toolbar">
+    <button mat-button class="button-toolbar" routerLink="aboutme">
       <mat-icon>face</mat-icon>
       About Me
     </button>
@@ -47,8 +47,7 @@
     </button>
   </div>
   <div>
-    <button type="button" class="btn btn-dark" style="z-index: 3; display: flex; align-items: flex-end"
-      routerLink="login">
+    <button type="button" (click)="login()" class="btn btn-dark" style="z-index: 3; display: flex; align-items: flex-end">
       Login
     </button>
   </div>

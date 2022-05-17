@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { data } from 'jquery';
 import { EducationDialogComponent } from '../education-dialog/education-dialog.component';
 import { EducationService } from '../education.service';
+import { FotoinstitucionDialogComponent } from '../fotoinstitucion-dialog/fotoinstitucion-dialog.component';
 import { Education } from '../Models/Education';
 import { ProyectsDialogComponent } from '../proyects-dialog/proyects-dialog.component';
 
@@ -20,7 +21,8 @@ export class EducacionComponent implements OnInit {
     institucion: '',
     titulo: '',
     url_certificado: '',
-    url_web_institucion: ''
+    url_web_institucion: '',
+    urlImagen: ''
   }
 
   edit:any[];
@@ -32,7 +34,16 @@ export class EducacionComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private service: EducationService,
-              public dialog: MatDialog) { }
+              public dialog: MatDialog,
+              public dialogg: MatDialog) { }
+
+  openFotoDialog() {
+    const dialogRef = this.dialog.open(FotoinstitucionDialogComponent, {height:'510px',width:'400px', data: [this.edit, this.editando]},);
+    dialogRef.afterClosed().subscribe(res => {
+      
+    }
+      );
+  }
 
   openEditDialog(info : any) {
     this.edit = info;
@@ -40,11 +51,10 @@ export class EducacionComponent implements OnInit {
 
     console.log(data)
             
-    const dialogRef = this.dialog.open(EducationDialogComponent, 
-        {height:'440px',width:'400px', data:[
-          this.edit, this.editando]});
-          dialogRef.afterClosed().subscribe(res => {
-        }
+    const dialogRef = this.dialog.open(EducationDialogComponent, {height:'460px',width:'400px', data: [this.edit, this.editando]},);
+    dialogRef.afterClosed().subscribe(res => {
+      
+    }
       );
   }
 
@@ -53,7 +63,7 @@ export class EducacionComponent implements OnInit {
     this.editando = false;
 
     const dialogRef = this.dialog.open(EducationDialogComponent, 
-      {height:'440px',width:'400px', data:[
+      {height:'460px',width:'400px', data:[
        this.edit, this.editando]});
     dialogRef.afterClosed().subscribe(res => {
     }
@@ -74,6 +84,7 @@ export class EducacionComponent implements OnInit {
       }
 
       )
+
   }
 
 

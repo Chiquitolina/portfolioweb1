@@ -27,6 +27,7 @@ export class EducationDialogComponent implements OnInit {
         })
         console.log(this.educationsForm.value)      
           }
+    location.reload();
   }
 
   
@@ -39,7 +40,7 @@ export class EducationDialogComponent implements OnInit {
         institucion: [this.data[0].institucion, Validators.required],
         titulo: [this.data[0].titulo, Validators.required],
         url_certificado:[this.data[0].url_certificado, Validators.required],
-        url_web_institucion:[this.data[0].urlWebInstitucion, Validators.required]
+        url_web_institucion:[this.data[0].url_web_institucion, Validators.required]
       }) } else { 
         this.educationsForm = this.formBuilder.group ( {
           id: ['', Validators.required],
