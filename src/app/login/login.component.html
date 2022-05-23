@@ -1,39 +1,35 @@
 
 
 <div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center" style="margin-top: 10%">
-<form [formGroup]="form" (ngSubmit)="onEnviar($event)" style="text-align: center">
+<form style="text-align: center" #f="ngForm">
     <mat-card class="box">
       <mat-card-header>
         <mat-card-title>Sign In</mat-card-title>
       </mat-card-header>
-  
-      <form>
         <div class="form-group">
-          <b><label for="exampleInputEmail1">Email address:</label></b>
-          <input formControlName="email" 
-                [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}"
-                type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <b><label for="nombreUsuario">Email address:</label></b>
+          <input name="nombreUsuario" id="nombreUsuario" class="form-control"
+                [(ngModel)]="nombreUsuario" required>
         <div *ngIf="Email?.errors && Email?.touched">
           <p *ngIf="Email?.hasError('required')" class="text-danger">El email es requerido</p>
           <p *ngIf="Email?.hasError('email')" class="text-danger">El formato de email debe ser válido</p>
           </div>
         </div>
         <div class="form-group">
-          <b><label for="exampleInputPassword1">Password:</label></b>
-          <input formControlName="password" 
-                  [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 
+          <b><label for="password">Password:</label></b>
+          <input  [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 
                   'is-valid': !Password?.errors && Password?.touched}"
-                  type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  [(ngModel)]="password"
+                  type="password" class="form-control" name="password" id="password">
         </div>
         
           <div *ngIf="Password?.errors && Password?.touched">
             <p *ngIf="Password?.hasError('required')" class="text-danger">La contraseña es requerida</p>
             </div> 
             <div style="display: flex; flex-direction:column">
-        <button type="submit" [mat-dialog-close]="true" class="btn btn-primary" style="margin-top: 3%;">Submit</button>
+        <button type="submit" [mat-dialog-close]="true" class="btn btn-primary" style="margin-top: 3%;" [disabled]="!f.valid" (click)="onLogin()">Submit</button>
         <button class="btn btn-primary" [mat-dialog-close]="true" style="margin-top: 3%;">Cancel</button>
       </div>
-      </form>
     </mat-card>
   </form>
   </div>

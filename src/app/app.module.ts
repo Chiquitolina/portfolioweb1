@@ -24,7 +24,7 @@ import { MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
 
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 import { NgbModule } from'@ng-bootstrap/ng-bootstrap';
@@ -38,6 +38,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { AboutmeComponent } from './aboutme/aboutme.component';
 import { FotoperfilDialogComponent } from './fotoperfil-dialog/fotoperfil-dialog.component';
 import { FotoinstitucionDialogComponent } from './fotoinstitucion-dialog/fotoinstitucion-dialog.component';
+import { interceptorProvider } from './interceptors/prod-interceptor.service';
 
 
 
@@ -94,13 +95,14 @@ import { FotoinstitucionDialogComponent } from './fotoinstitucion-dialog/fotoins
     MatFormFieldModule,
     MatProgressSpinnerModule,
     ReactiveFormsModule,
+    FormsModule,
     MatDialogModule,
     NgbModule,
     HttpClientModule,
     MatButtonModule
   ],
   entryComponents: [EditDialogComponent],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent],
   exports: [
 

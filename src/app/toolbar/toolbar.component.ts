@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSidenav } from '@angular/material/sidenav';
 import { LoginComponent } from '../login/login.component';
+import { TokenService } from '../token.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -10,7 +11,9 @@ import { LoginComponent } from '../login/login.component';
 })
 export class ToolbarComponent implements OnInit {
 
-  @Input() inputSideNav:MatSidenav;
+  logeado: boolean = false;
+
+  @Input() inputSideNav: MatSidenav;
 
   public isCollapsed = true;
   mostrarBanner: boolean = true;
@@ -20,26 +23,36 @@ export class ToolbarComponent implements OnInit {
   }
 
   hideBanner() {
-  this.mostrarBanner = false
+    this.mostrarBanner = false
   }
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,
+    private tokenService: TokenService) { }
+
+  isLogged = false;
 
   ngOnInit(): void {
-
-
-    
-  }
-
-  
-  login() {
-    const dialogRef = this.dialog.open(LoginComponent, 
-      {height:'500px',width:'400px', data:[
-       ]});
-    dialogRef.afterClosed().subscribe(res => {
-      
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
     }
-   );
   }
+
+  onLogout(): void {
+    this.tokenService.logOut()
+    location.reload()
+  }
+
+
+
+login() {
+  const dialogRef = this.dialog.open(LoginComponent,
+    { height: '500px', width: '400px', });
+  dialogRef.afterClosed().subscribe(res => {
+
+  }
+  );
+}
 
 }

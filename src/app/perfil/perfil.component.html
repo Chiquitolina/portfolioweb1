@@ -13,7 +13,7 @@
 
             <img src="https://firebasestorage.googleapis.com/v0/b/portfolioweb-9e852.appspot.com/o/users%2Feeeeeee?alt=media&token=58d846e7-ebd8-4f38-998b-e680b6ec763a" class="imagenperfil" />
             <div fxLayoutAlign="start">
-              <button (click)="dialogFoto()" mat-mini-fab style="margin-left: 0%; margin-top: -35%; max-width: 100%;" color="">
+              <button *ngIf="isLogged" (click)="dialogFoto()" mat-mini-fab style="margin-left: 0%; margin-top: -35%; max-width: 100%;" color="">
                 <div>
                   <mat-icon style="color: black;">add_a_photo</mat-icon>
                 </div>
@@ -39,7 +39,7 @@
           <hr fxHide.xs="true" style="color: black" />
           <h3 fxHide.xs="true" style="color: black">25 años</h3>
           <div>
-            <button mat-fab style="color: grey; background-color: white; max-width: 100%; max-height: 100%;"
+            <button *ngIf="isLogged" mat-fab style="color: grey; background-color: white; max-width: 100%; max-height: 100%;"
               (click)="openDialog()">
               <img src="/assets/img/editar.png" style="width: 20px;" />
               <div>

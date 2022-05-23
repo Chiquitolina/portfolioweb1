@@ -9,6 +9,7 @@ import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 import { Persona } from '../Models/Persona';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { FotoperfilDialogComponent } from '../fotoperfil-dialog/fotoperfil-dialog.component';
+import { TokenService } from '../token.service';
 
 @Component({
   selector: 'app-perfil',
@@ -17,6 +18,8 @@ import { FotoperfilDialogComponent } from '../fotoperfil-dialog/fotoperfil-dialo
 })
 
 export class PerfilComponent implements OnInit {
+
+  isLogged = false;
 
   personasForm = FormGroup;
 
@@ -28,8 +31,8 @@ personas:Persona[];
                private service: AppService,
                public dialog: MatDialog,
                public dialogdos: MatDialog,
-               private formBuilder: FormBuilder
-               ) { }
+               private formBuilder: FormBuilder,
+               private tokenService:TokenService) { }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(EditDialogComponent, {height:'640px',width:'400px', data: [this.personas, this.editado]},);
@@ -48,10 +51,14 @@ personas:Persona[];
   }
 
   ngOnInit(): void {
-  
     this.service.getAll()
     .subscribe(res => {
       this.personas = res;})
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
 
     
   } 

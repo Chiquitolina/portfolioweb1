@@ -47,8 +47,11 @@
     </button>
   </div>
   <div>
-    <button type="button" (click)="login()" class="btn btn-dark" style="z-index: 3; display: flex; align-items: flex-end">
+    <button *ngIf="!isLogged" type="button" (click)="login()" class="btn btn-dark" style="z-index: 3; display: flex; align-items: flex-end">
       Login
+    </button>
+    <button *ngIf="isLogged" type="button" (click)="onLogout()" class="btn btn-dark" style="z-index: 3; display: flex; align-items: flex-end">
+      Logout
     </button>
   </div>
 </mat-toolbar>
