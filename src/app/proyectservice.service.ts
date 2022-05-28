@@ -14,5 +14,18 @@ export class ProyectserviceService {
     return this.http.get<Proyect[]>('http://localhost:8080/ver/proyectos');
  }
 
+ createProject(project:any):Observable<any> {
+  return this.http.post('http://localhost:8080/new/proyecto/', project)
+}
+
+deleteProject(id:number):Observable<any> {
+  return this.http.delete('http://localhost:8080/delete/proyecto/'+id)
+}
+
+updateProject(id:number, project: Proyect): Observable<any> {
+  return this.http.put('http://localhost:8080/update/porject/'+id, project)
+
+}
+
 
 }

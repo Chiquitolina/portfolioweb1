@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="container">
+
+
     <div class="container" *ngFor="let persona of personas; let i = index" style="margin-top: 0%; ">
       <div class="row" style="
             text-align: center;
@@ -7,8 +7,8 @@
             justify-content: center;
           "></div>
       <div class="row" style="justify-content: center; text-align: center;">
-        <div class="col-4 col-md-3 col-sm-4 col-lg-2 perfil" style="background-color: #00446b; display: flex; justify-content: center; align-items: center;
-            border-radius: 0px 0px 32px 32px; overflow: hidden ; box-shadow: inset 16px 0px 152px -65px rgba(0,0,0,0.75);">
+        <div class="col-4 col-md-3 col-sm-4 col-lg-2 perfil sombrainterior" style="background-color: #00446b; display: flex; justify-content: center; align-items: center;
+            border-radius: 0px 0px 32px 32px; overflow: hidden ;">
           <div>
 
             <img src="https://firebasestorage.googleapis.com/v0/b/portfolioweb-9e852.appspot.com/o/users%2Feeeeeee?alt=media&token=58d846e7-ebd8-4f38-998b-e680b6ec763a" class="imagenperfil" />
@@ -22,15 +22,17 @@
           </div>
 
         </div>
-        <div class="col-4 col-md-6 col-sm-4 col-lg-4 perfil" style="
+        <div class="col-4 col-md-6 col-sm-4 col-lg-4 perfil sombrainterior" style="
               background-color:#00446b;
+              
+
 
 
             ">
 
-          <hr fxShow.xs="true" style="color: black" />
-          <div fxLayoutAlign="center" style="">
-            <h2 style="color: black; font-size: 23px;"> {{persona.nombre}} {{persona.segundonombre}}
+          <hr fxShow.xs="true" style="color: black; "  />
+          <div class="" fxLayoutAlign="center" style="border-radius: 12px 12px 12px 12px;">
+            <h2 class="" style="color: black; font-size: 23px; text-shadow: 2px 1px 6px rgba(0,0,0,0.52);"> {{persona.nombre}} {{persona.segundonombre}}
               {{persona.apellido}}
             </h2>
           </div>
@@ -48,7 +50,7 @@
           </div>
 
         </div>
-        <div class="col-4 col-md-3 col-sm-4 col-lg-2 perfil" style="
+        <div class="col-4 col-md-3 col-sm-4 col-lg-2 perfil sombrainterior" style="
               border-color: black;
               background-color: #00446b;
               display: flex;
@@ -57,7 +59,8 @@
               padding-top: 2%;
               z-index: 1;
               border-radius: 0px 0px 32px 32px;
-              box-shadow: inset 16px 0px 152px -65px rgba(0,0,0,0.75);
+
+
             ">
           <div style="max-width: 100%; ">
             <div>
@@ -68,8 +71,8 @@
 
 
         </div>
-        <div class="col-10 col-md-3 col-sm-10 col-lg-2 perfil"
-          style="background-color: #00446b; justify-content: center; align-items: center; border-radius: 32px 32px 32px 32px; z-index: 0; margin-top: -2%;"
+        <div class="col-10 col-md-3 col-sm-10 col-lg-2 perfil sombrainterior"
+          style="background-color: #00446b; justify-content: center; align-items: center; border-radius: 32px 32px 32px 32px; z-index: -44; margin-top: -2%;"
           fxHide.lg="true" fxHide.md="true" fxHide.sm="true">
           <div class="perfil" style="border-radius: 20px 20px 20px 20px; background-color: #00446b;">
             <hr style="color: transparent;">
@@ -85,5 +88,4 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
+ 

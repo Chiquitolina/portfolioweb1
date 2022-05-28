@@ -10,9 +10,17 @@ export class ContactComponent implements OnInit {
   contactForm: FormGroup;
   disabledSubmitButton: boolean = true;
 
+  email: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  emailTrue() {
+    this.email = true;
+  }
+
+
 
 }

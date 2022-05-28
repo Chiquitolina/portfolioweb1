@@ -3,20 +3,77 @@
       <div
         class="row"
         style="
-          border-radius: 32px 32px 0 0;
+          border-radius: 32px 32px 32px 32px;
           background-color: #00446b;
           ;
         "
       >
      
   
-        <div fxLayoutAlign="center"><button mat-mini-fab color="" (click)="openDialog(this.project)"> + </button></div> 
+        <div fxLayoutAlign="center"><button mat-mini-fab color="" [disabled]="!isLogged" (click)="openDialog(this.project)"> + </button></div> 
 
       
-      <div style="background-color: #00446b; ">
-      <div class="perfil clase" style="text-align: center;">
+      <div style="background-color: #00446b; border-radius: 32px 32px 32px 32px">
+      <div class="perfil clase" style="text-align: center; border-radius: 32px 32px 32px 32px">
 
         <h1 *ngIf="valorArray==0" style="color: black;"> NO RECORDS IN DATABASE :(</h1>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div fxLayoutAlign="center" style="display: flex; flex-direction: row;">
+                  <button *ngIf="isLogged" class="edit-buttons" (click)="openEditDialog(proyectouno)">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button *ngIf="isLogged" class="edit-buttons"  (click)="deleteProject(this.proyectouno.id)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+                <h2><p>{{this.proyectouno.nombre}}</p></h2> 
+                <p>{{this.proyectouno.descripcion}}</p>
+                <img src="/assets/img/gitlogo.png" style="width: 30px">
+                <p>{{this.proyectouno.urlProyecto}}</p>
+                <img class="imagenperfil" src="{{this.proyectouno.urlImagen}}" style="height: 150px; border-radius: 12 12 12 12;">
+              </div>
+              <div *ngFor="let project of projects | slice:1; let i = index;" class="carousel-item">
+                
+                <div fxLayoutAlign="center" style="display: flex; flex-direction: row;">
+                  <button *ngIf="isLogged" class="edit-buttons" (click)="openEditDialog(project)">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button *ngIf="isLogged" class="edit-buttons" (click)="deleteProject(project.id)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+                <h2><p>{{project.nombre}}</p></h2>
+                <p>{{project.descripcion}}</p>
+                 <img src="/assets/img/gitlogo.png" style="width: 30px">
+                <p>{{project.urlProyecto}}</p>
+                <img class="imagenperfil" src="{{project.urlImagen}}" style="height: 150px; border-radius: 12 12 12 12;">
+              </div>
+            </div>
+            <div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="margin-left: 5%; margin-top: 10%">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span style="color: black" class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="margin-right: 5%; margin-top: 10%;">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span style="color: black" class="sr-only">Next</span>
+          </a>
+          </div>
 
     </div>
 </div>

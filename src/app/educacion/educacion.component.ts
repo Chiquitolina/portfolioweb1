@@ -7,6 +7,7 @@ import { EducationService } from '../education.service';
 import { FotoinstitucionDialogComponent } from '../fotoinstitucion-dialog/fotoinstitucion-dialog.component';
 import { Education } from '../Models/Education';
 import { ProyectsDialogComponent } from '../proyects-dialog/proyects-dialog.component';
+import { TokenService } from '../token.service';
 
 @Component({
   selector: 'app-educacion',
@@ -14,6 +15,8 @@ import { ProyectsDialogComponent } from '../proyects-dialog/proyects-dialog.comp
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent implements OnInit {
+
+  isLogged:boolean = false;
 
   education = {
     id: '',
@@ -34,6 +37,7 @@ export class EducacionComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private service: EducationService,
+              private serviceS:TokenService,
               public dialog: MatDialog,
               public dialogg: MatDialog) { }
 
@@ -82,8 +86,11 @@ export class EducacionComponent implements OnInit {
         this.educations = res;
         console.log(this.educations);
       }
-
       )
+
+    if (this.serviceS.getToken()) {
+      this.isLogged = true
+    }
 
   }
 

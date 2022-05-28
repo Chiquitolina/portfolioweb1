@@ -1,26 +1,117 @@
-    <div class="container">
-    <div fxLayoutAlign="center" style="background-color: #00446b; border-radius: 32px 32px 32px 32px;" >
-    <form id="contact" class="text-center border-light" style="width: 70%;">
-        <h1>Send me a message! :)</h1>
-        <!-- Name -->
-        <div style="margin-top: 2%;">
-        <input type="text" id="defaultContactFormName" mdbInput
-          class="form-control mb-2" placeholder="Name">
-        <!-- Email -->
-        <input type="email" id="defaultContactFormEmail" mdbInput
-          class="form-control mb-2" placeholder="E-mail">
+    <div *ngIf="!email" class="container contactdiv" >
+      <div class="row">
+        <ul class="nav nav-tabs" style="background-color: #00446b; display: flex; justify-content: center;
+        border-radius: 32px 32px 0 0;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page">Socials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " (click)="email = !email" tabindex="-1" aria-disabled="true">Contact form</a>
+          </li>
+        </ul>
+        <div class="col sombrainterior" style="background-color: #00446b; border-radius: 0px 0px 32px 32px;">
+          <mat-list>
+            <div style="width: 100%; display: flex; justify-content:center"><img src="assets/img/linkedin.svg" style="width: 4%"></div>
+            <mat-list-item fxLayoutAlign="center"> <a href="https://www.linkedin.com/in/alejandro-ignacio-godino/"> LinkedIn </a></mat-list-item>
+            <div style="width: 100%; display: flex; justify-content:center"><img src="assets/img/github.svg" style="width: 4%"></div>
+            <mat-list-item fxLayoutAlign="center"> <a href="https://github.com/Chiquitolina"> GitHub </a></mat-list-item>
+            <div style="width: 100%; display: flex; justify-content:center"><img src="assets/img/Repl.svg.png" style="width: 4%"></div>  
+            <mat-list-item fxLayoutAlign="center"> <a href="https://replit.com/@Chiquitolina1"> Replit </a></mat-list-item>         
+          </mat-list>
+        </div>
+  </div>
+    </div>
+    <div *ngIf="email" class="container contactdiv" >
+      <div class="row">
+        <ul class="nav nav-tabs" style="background-color: #00446b; display: flex; justify-content: center; max-width: 100%; max-height: 100%;
+        border-radius: 32px 32px 0 0;">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" (click)="email = !email">Socials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" tabindex="-1" aria-disabled="true">Contact form</a>
+          </li>
+        </ul>
+        <div class="col- sombrainterior" style="background-color: #00446b; border-radius: 0px 0px 32px 32px;">
+          <!--Section: Contact v.2-->
+<section class="mb-4">
 
-        <!-- Message -->
-        <div class="form-group">
-          <textarea class="form-control rounded-0 mb-2" mdbInput id="exampleFormControlTextarea2"
-            rows="3" placeholder="Message"></textarea>
-            <button color="info" outline="true" class="btn btn-primary"
-            mdbWavesEffect type="submit">Send</button>
+
+  <div class="row" fxLayoutAlign="center" style="display: flex; align-items:center;">
+
+      <!--Grid column-->
+      <div class="col-md-9 mb-md-0 mb-0">
+          <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+              <!--Grid row-->
+              <div class="row">
+
+                  <!--Grid column-->
+                  <div class="col-md-6 col-6">
+                      <div class="md-form mb-0">
+                        <label for="name" class="">Your name</label>
+                          <input type="text" id="name" name="name" class="form-control">
+                          
+                      </div>
+                  </div>
+                  <div class="col-md-6 col-6">
+                    <div class="md-form mb-0">
+                      <label for="subject" class="">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-control">
+                        
+                    </div>
+                </div>
+                  <!--Grid column-->
+
+                  <!--Grid column-->
+
+                  <!--Grid column-->
+
+              </div>
+              <!--Grid row-->
+
+              <!--Grid row-->
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="md-form mb-0">
+                        <label for="subject" class="">Subject</label>
+                          <input type="text" id="subject" name="subject" class="form-control">
+                          
+                      </div>
+                  </div>
+                  
+              </div>
+              <!--Grid row-->
+
+              <!--Grid row-->
+              <div class="row">
+
+                  <!--Grid column-->
+                  <div class="col-md-12">
+
+                      <div class="md-form">
+                        <label for="message">Your message</label>
+                          <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                          
+                      </div>
+
+                  </div>
+              </div>
+              <!--Grid row-->
+
+          </form>
+
+          <div class="text-center text-md-left">
+              <a class="btn btn-primary">Send</a>
+          </div>
+          <div class="status"></div>
+      </div>
+      <!--Grid column-->
+
+
+  </div>
+
+</section>
         </div>
-        </div>
-        <!-- Copy -->
-        <!-- Send button -->
-       
-      </form>
     </div>
     </div>

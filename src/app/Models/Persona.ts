@@ -10,4 +10,5 @@ export class Persona {
     provincia:string;
     segundonombre:string;
     titulo:string;
+    aboutme:string;
 }

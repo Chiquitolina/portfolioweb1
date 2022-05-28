@@ -40,7 +40,8 @@ export class EducationDialogComponent implements OnInit {
         institucion: [this.data[0].institucion, Validators.required],
         titulo: [this.data[0].titulo, Validators.required],
         url_certificado:[this.data[0].url_certificado, Validators.required],
-        url_web_institucion:[this.data[0].url_web_institucion, Validators.required]
+        url_web_institucion:[this.data[0].url_web_institucion, Validators.required],
+        urlImagen:[this.data[0].urlImagen, Validators.required]
       }) } else { 
         this.educationsForm = this.formBuilder.group ( {
           id: ['', Validators.required],

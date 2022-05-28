@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Persona } from './Models/Persona';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,9 @@ import { Observable } from 'rxjs';
 export class AppService {
 
   constructor(
-    private http: HttpClient
-  ) {}
+    private http: HttpClient ) {}
+
+     private api = environment.apiBaseURL 
 
     getAll():Observable <Persona[]> {
       return this.http.get<Persona[]>('http://localhost:8080/ver/personas');

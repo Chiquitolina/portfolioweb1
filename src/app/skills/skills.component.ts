@@ -6,6 +6,7 @@ import { data } from 'jquery';
 import { SkillsDialogComponent } from '../skills-dialog/skills-dialog.component';
 import { Skill } from '../Models/Skill';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { TokenService } from '../token.service';
 
 @Component({
   selector: 'app-skills',
@@ -13,6 +14,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
+
+  isLogged:boolean = false;
 
   skills:Skill[];
 
@@ -29,6 +32,7 @@ export class SkillsComponent implements OnInit {
   skillsForm = FormGroup;
 
   constructor(private service: SkillService,
+              private serviceT:TokenService,
               public dialog: MatDialog,
               private formBuilder: FormBuilder) { 
                 
@@ -83,7 +87,10 @@ export class SkillsComponent implements OnInit {
     this.service.getAll()
     .subscribe(res => {
       this.skills = res;})
-
+    
+    if (this.serviceT.getToken()) {
+      this.isLogged = true
+    }
     
   }
 

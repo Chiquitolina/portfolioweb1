@@ -39,6 +39,8 @@ import { AboutmeComponent } from './aboutme/aboutme.component';
 import { FotoperfilDialogComponent } from './fotoperfil-dialog/fotoperfil-dialog.component';
 import { FotoinstitucionDialogComponent } from './fotoinstitucion-dialog/fotoinstitucion-dialog.component';
 import { interceptorProvider } from './interceptors/prod-interceptor.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormemailComponent } from './formemail/formemail.component';
 
 
 
@@ -61,11 +63,13 @@ import { interceptorProvider } from './interceptors/prod-interceptor.service';
     ProjectsComponent,
     AboutmeComponent,
     FotoperfilDialogComponent,
-    FotoinstitucionDialogComponent
+    FotoinstitucionDialogComponent,
+    FormemailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FontAwesomeModule,
     NgCircleProgressModule.forRoot({
       "backgroundColor": "#FDB900",
       "radius": 40,

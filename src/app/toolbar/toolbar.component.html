@@ -46,12 +46,14 @@
       Contact
     </button>
   </div>
-  <div>
+  <div style="display: flex; align-items:center">
     <button *ngIf="!isLogged" type="button" (click)="login()" class="btn btn-dark" style="z-index: 3; display: flex; align-items: flex-end">
-      Login
+      <img src="/assets/img/login.png" style="width: 25px; color: aliceblue;" />
+      <div style="color: black;">Login</div>
     </button>
     <button *ngIf="isLogged" type="button" (click)="onLogout()" class="btn btn-dark" style="z-index: 3; display: flex; align-items: flex-end">
-      Logout
+      <img src="/assets/img/logout.png" style="width: 25px; color: aliceblue;" />
+      <div style="color: black;">Logout</div>
     </button>
   </div>
 </mat-toolbar>

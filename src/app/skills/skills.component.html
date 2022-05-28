@@ -6,7 +6,7 @@
 
         <div class="col">
           <div fxLayoutAlign="center">
-            <button mat-mini-fab color="" (click)="openEdittDialog(skill)"> + </button>
+            <button [disabled]="!isLogged" mat-mini-fab color="" (click)="openEdittDialog(skill)"> + </button>
           </div>
         </div>
 
@@ -19,7 +19,7 @@
         <div fxLayoutAlign="center" *ngFor="let skill of skills; let i = index" class="col-3 perfil clase
 " style="min-width: 100px; display: flex; justify-content: center;">
           <div>
-            <div fxLayoutAlign="center" style="display: flex; flex-direction: row;">
+            <div *ngIf="isLogged" fxLayoutAlign="center" style="display: flex; flex-direction: row;">
               <button class="edit-buttons" (click)="openEditDialog(skill)">
                 <mat-icon>edit</mat-icon>
               </button>
