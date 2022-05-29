@@ -13,19 +13,19 @@ export class EducationService {
     ) { }
 
     getAll() {
-      return this.http.get<Education[]>('http://localhost:8080/ver/educacion');
+      return this.http.get<Education[]>('https://enigmatic-castle-22417.herokuapp.com/ver/educacion');
    }
 
    deleteEducation(id:number):Observable<any> {
-    return this.http.delete('http://localhost:8080/delete/educacion/'+id)
+    return this.http.delete('https://enigmatic-castle-22417.herokuapp.com/delete/educacion/'+id)
   }
 
   createEducation(educacion : Education) {
-    return this.http.post('http://localhost:8080/new/educacion', educacion);
+    return this.http.post('https://enigmatic-castle-22417.herokuapp.com/new/educacion', educacion);
   }
 
   update(id:number, educacion:Education): Observable<any> {
-    return this.http.put('http://localhost:8080/update/education/'+id, educacion)
+    return this.http.put('https://enigmatic-castle-22417.herokuapp.com/update/education/'+id, educacion)
   }
 
 }

@@ -11,24 +11,24 @@ export class SkillService {
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<Skill[]> {
-      return this.http.get<Skill[]>('http://localhost:8080/ver/skill');
+      return this.http.get<Skill[]>('https://enigmatic-castle-22417.herokuapp.com/ver/skill');
    }
 
   getOne(id:number): Observable<Skill> {
-    return this.http.get<Skill>('http://localhost:8080/ver/skill/'+id)
+    return this.http.get<Skill>('https://enigmatic-castle-22417.herokuapp.com/ver/skill/'+id)
   }
 
   deleteSkill(id:number):Observable<any> {
-    return this.http.delete('http://localhost:8080/delete/skill/'+id)
+    return this.http.delete('https://enigmatic-castle-22417.herokuapp.com/delete/skill/'+id)
   }
 
   createSkill(skill : any):Observable<any> {
-    return this.http.post('http://localhost:8080/new/skill/', skill)
+    return this.http.post('https://enigmatic-castle-22417.herokuapp.com/new/skill/', skill)
   }
 
 
   updateSkill(id:number, skill: Skill): Observable<any> {
-    return this.http.put('http://localhost:8080/update/skill/'+id, skill)
+    return this.http.put('https://enigmatic-castle-22417.herokuapp.com/update/skill/'+id, skill)
 
   }
 }

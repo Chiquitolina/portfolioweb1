@@ -15,11 +15,11 @@ export class AppService {
      private api = environment.apiBaseURL 
 
     getAll():Observable <Persona[]> {
-      return this.http.get<Persona[]>('http://localhost:8080/ver/personas');
+      return this.http.get<Persona[]>('https://enigmatic-castle-22417.herokuapp.com/ver/personas');
    }
 
     update(id:number, persona: Persona): Observable<any> {
-      return this.http.put('http://localhost:8080/update/persona/'+id, persona)
+      return this.http.put('https://enigmatic-castle-22417.herokuapp.com/update/persona/'+id, persona)
     }
 
 }
