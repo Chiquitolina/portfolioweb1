@@ -56,11 +56,13 @@ border-radius: 0 0 0 1rem;
     color: red
 }
 
-
+#abouttext {
+  font-size: 16px
+}
 
 #banner {
    border-radius: 32px 32px 32px 32px;
-   max-width: 100%;
+   width: 100%;
    max-height: 350px;
 }
 

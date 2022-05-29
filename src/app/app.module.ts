@@ -37,10 +37,9 @@ import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AboutmeComponent } from './aboutme/aboutme.component';
 import { FotoperfilDialogComponent } from './fotoperfil-dialog/fotoperfil-dialog.component';
-import { FotoinstitucionDialogComponent } from './fotoinstitucion-dialog/fotoinstitucion-dialog.component';
 import { interceptorProvider } from './interceptors/prod-interceptor.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { FormemailComponent } from './formemail/formemail.component';
+import { AboutmeDialogComponent } from './aboutme-dialog/aboutme-dialog.component';
 
 
 
@@ -63,8 +62,7 @@ import { FormemailComponent } from './formemail/formemail.component';
     ProjectsComponent,
     AboutmeComponent,
     FotoperfilDialogComponent,
-    FotoinstitucionDialogComponent,
-    FormemailComponent
+    AboutmeDialogComponent
   ],
   imports: [
     BrowserModule,

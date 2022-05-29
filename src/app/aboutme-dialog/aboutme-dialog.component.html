@@ -1,0 +1,25 @@
+<div class="row">
+
+    <!--Grid column-->
+    <form [formGroup]="personasForm">
+    <div class="col-md-12">
+
+        <div class="md-form">
+          <label for="message">Max 2000 characters</label>
+            <textarea type="text" id="message" formControlName="aboutme" name="message" rows="10" class="form-control md-textarea">
+
+            </textarea>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="margin-top: 3%;">
+                  <button type="submit" class="btn btn-primary" (click)="save()" [mat-dialog-close]="true">Submit</button>
+                </div>
+                <div style="margin-top: 3%;">
+                  <button type="submit" class="btn btn-primary" [mat-dialog-close]="true">Cancel</button>
+                </div>
+              </div>
+        </div>
+
+    </div>
+</form>
+</div>
+<!--Grid row-->

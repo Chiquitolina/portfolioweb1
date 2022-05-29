@@ -4,10 +4,10 @@
 <form style="text-align: center" #f="ngForm">
     <mat-card class="box">
       <mat-card-header>
-        <mat-card-title>Sign In</mat-card-title>
+        <mat-card-title>Log In</mat-card-title>
       </mat-card-header>
         <div class="form-group">
-          <b><label for="nombreUsuario">Email address:</label></b>
+          <b><label for="nombreUsuario">User:</label></b>
           <input name="nombreUsuario" id="nombreUsuario" class="form-control"
                 [(ngModel)]="nombreUsuario" required>
         <div *ngIf="Email?.errors && Email?.touched">

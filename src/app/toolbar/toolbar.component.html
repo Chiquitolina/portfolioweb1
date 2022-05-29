@@ -1,12 +1,23 @@
 
 
 <mat-toolbar fxLayout="row" class="bar">
+
+  <div style="display: flex; justify-content:space-around">
  
   <div fxShow.lg="true">
     <button mat-button (click)="inputSideNav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
   </div>
+
+  <div>
+    <a><button mat-button class="button-toolbar">
+      <img src="assets/img/argentinaprogramalogo2.png" style="width: 138px">
+      </button></a>
+  </div>
+
+</div>
+
   <div fxShow.xs="false" fxShow.md="false" fxShow.sm="false">
     <a routerLink=""><button mat-button class="button-toolbar">
         <mat-icon>home</mat-icon>

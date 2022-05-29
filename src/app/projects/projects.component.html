@@ -1,4 +1,4 @@
-<div class="container">
+
     <div class="container">
       <div
         class="row"
@@ -42,8 +42,8 @@
                 </div>
                 <h2><p>{{this.proyectouno.nombre}}</p></h2> 
                 <p>{{this.proyectouno.descripcion}}</p>
-                <img src="/assets/img/gitlogo.png" style="width: 30px">
-                <p>{{this.proyectouno.urlProyecto}}</p>
+                <p><a href="{{this.proyectouno.urlProyecto}}"><img src="/assets/img/gitlogo.png" style="width: 30px"></a></p>
+
                 <img class="imagenperfil" src="{{this.proyectouno.urlImagen}}" style="height: 150px; border-radius: 12 12 12 12;">
               </div>
               <div *ngFor="let project of projects | slice:1; let i = index;" class="carousel-item">
@@ -58,8 +58,8 @@
                 </div>
                 <h2><p>{{project.nombre}}</p></h2>
                 <p>{{project.descripcion}}</p>
-                 <img src="/assets/img/gitlogo.png" style="width: 30px">
-                <p>{{project.urlProyecto}}</p>
+                 
+                 <p><a href="{{project.urlProyecto}}"><img src="/assets/img/gitlogo.png" style="width: 30px"></a></p>
                 <img class="imagenperfil" src="{{project.urlImagen}}" style="height: 150px; border-radius: 12 12 12 12;">
               </div>
             </div>
@@ -67,11 +67,11 @@
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="margin-left: 5%; margin-top: 10%">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span style="color: black" class="sr-only">Previous</span>
+            <u><b><span style="color: black" class="sr-only">Previous</span></b></u>
           </a>
           <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="margin-right: 5%; margin-top: 10%;">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span style="color: black" class="sr-only">Next</span>
+            <u><b><span style="color: black" class="sr-only">Next</span></b></u>
           </a>
           </div>
 
@@ -79,4 +79,3 @@
 </div>
     </div>
   </div>
-</div>

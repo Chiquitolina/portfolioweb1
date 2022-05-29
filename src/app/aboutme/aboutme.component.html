@@ -1,4 +1,4 @@
-<div class="container">
+
     
 <div class="container">
 
@@ -6,18 +6,12 @@
 
         <div class="col">
             
-            <div fxLayoutAlign="center"><button mat-mini-fab color=""> <img src="/assets/img/editar.png" style="width: 20px;"/> </button></div> 
+            <div fxLayoutAlign="center"><button (click)="openDialog()" [disabled]="!isLogged" mat-mini-fab color=""> <img src="/assets/img/editar.png" style="width: 20px;"/> </button></div> 
 
-            <div class="perfil clase" style="text-align: center">
-                <h1 style="font-size: 16px">{{this.aboutme}}</h1>
-            </div>
-
-            <div class="perfil clase" style="text-align: center">
-                <h1 style="font-size: 16px">{{this.aboutme}}</h1>
+            <div class="perfil clase" style="text-align: center" fxLayoutAlign="center">
+                <h1 style="font-size: 16px; width: 380px;">{{this.aboutme}}</h1>
             </div>
 
         </div>
     </div>
-</div>
-
 </div>

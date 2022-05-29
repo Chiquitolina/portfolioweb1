@@ -23,7 +23,7 @@ deleteProject(id:number):Observable<any> {
 }
 
 updateProject(id:number, project: Proyect): Observable<any> {
-  return this.http.put('https://enigmatic-castle-22417.herokuapp.com/update/porject/'+id, project)
+  return this.http.put('https://enigmatic-castle-22417.herokuapp.com/update/skill/'+id, project)
 
 }
 

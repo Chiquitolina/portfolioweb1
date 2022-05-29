@@ -4,7 +4,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { data } from 'jquery';
 import { EducationDialogComponent } from '../education-dialog/education-dialog.component';
 import { EducationService } from '../education.service';
-import { FotoinstitucionDialogComponent } from '../fotoinstitucion-dialog/fotoinstitucion-dialog.component';
 import { Education } from '../Models/Education';
 import { ProyectsDialogComponent } from '../proyects-dialog/proyects-dialog.component';
 import { TokenService } from '../token.service';
@@ -41,13 +40,6 @@ export class EducacionComponent implements OnInit {
               public dialog: MatDialog,
               public dialogg: MatDialog) { }
 
-  openFotoDialog() {
-    const dialogRef = this.dialog.open(FotoinstitucionDialogComponent, {height:'510px',width:'400px', data: [this.edit, this.editando]},);
-    dialogRef.afterClosed().subscribe(res => {
-      
-    }
-      );
-  }
 
   openEditDialog(info : any) {
     this.edit = info;

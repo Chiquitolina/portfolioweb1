@@ -48,7 +48,7 @@ export class EducationDialogComponent implements OnInit {
         duracion: ['', Validators.required],
         institucion: ['', Validators.required],
         titulo: ['', Validators.required],
-        url_certificado:['', Validators.required],
+        urlImagen:['', Validators.required],
         url_web_institucion:['', Validators.required]
         })
       }

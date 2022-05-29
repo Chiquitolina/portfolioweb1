@@ -10,7 +10,6 @@ import { ContactComponent } from './contact/contact.component';
 import { ProyectsDialogComponent } from './proyects-dialog/proyects-dialog.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AboutmeComponent } from './aboutme/aboutme.component';
-import { FormemailComponent } from './formemail/formemail.component';
 
 const routes: Routes = [
   {path: '', component:HeaderComponent, data: { animation: 'isHome' }},
@@ -19,8 +18,7 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'contact', component:ContactComponent},
   {path: 'project', component: ProjectsComponent},
-  {path: 'aboutme', component: AboutmeComponent},
-  {path: 'formemail', component: FormemailComponent}
+  {path: 'aboutme', component: AboutmeComponent}
 ];
 
 @NgModule({
